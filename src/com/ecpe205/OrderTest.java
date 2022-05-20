@@ -11,36 +11,33 @@ import org.junit.jupiter.api.TestInstance;
 class OrderTest {
 
     Order order;
-
     @BeforeAll
     void list(){
 
         // 8-2.
         order = new Order();
-        order.setItem(new Product("11111","wagyu beef",2500),2,0);
-        order.setItem(new Product("22222","spaghetti",100),12,1);
-        order.setItem(new Product("33333","lumpia",25),2,2);
+        order.setItem(new Product("12121","Belo",2500),1,0);
+        order.setItem(new Product("13131","Celeteque",100),6,1);
+        order.setItem(new Product("15151","Ponds",400),3,2);
 
     }
-
     @Test
     void addItems(){
         // 8-3.
-        order.setItem(new Product("12121","milk",45),4,3);
-        assertEquals(/* the total quantity */,order.getTotalQuantity());
-        assertEquals(/* the grand total */,order.getGrandTotal());
-
+        order.setItem(new Product("20202","Garnier",450),4,3);
+        assertEquals(4 , order.getGrandTotal());
+        assertEquals(4 ,order.getGrandTotal());
 
     }
-
     @Test
-    removeItems(){
+    void removeItems(){
         // 8-4.
         order.removeItem(0);
         order.removeItem(1);
-        assertEquals(/* the total quantity */,order.getTotalQuantity());
-        assertEquals(/* the grand total */,order.getGrandTotal());
+        assertEquals(0 ,order.getTotalQuantity());
+        assertEquals(0 ,order.getGrandTotal());
     }
+
 
 
 
